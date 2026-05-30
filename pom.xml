@@ -13,10 +13,10 @@
     </parent>
 
     <groupId>com.assistant</groupId>
-    <artifactId>multi-agent-assistant</artifactId>
+    <artifactId>general-coding-assistant</artifactId>
     <version>1.0.0</version>
-    <name>Multi-Agent Coding Assistant</name>
-    <description>Java Multi-Agent Coding Assistant with NVIDIA API Integration</description>
+    <name>General Coding Assistant API</name>
+    <description>Multi-agent coding assistant API with NVIDIA AI integration</description>
 
     <properties>
         <java.version>17</java.version>

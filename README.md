@@ -1,4 +1,4 @@
-# Multi-Agent Coding Assistant
+# General Coding Assistant API
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -7,7 +7,7 @@
 
 ## Overview
 
-An intelligent Java-based application that leverages multiple specialized AI agents to provide comprehensive coding assistance. Built with Spring Boot and integrated with NVIDIA's AI API, this system orchestrates different agents to handle code generation, code review, and code explanation tasks efficiently.
+A multi-agent coding assistant API powered by NVIDIA's AI models. Built with Spring Boot, it orchestrates specialized agents for code generation, review, and explanation through a simple REST interface.
 
 ## Features
 
@@ -55,7 +55,7 @@ On first run, you'll be prompted for your NVIDIA API key.
 
 3. **Build and run**
    ```bash
-   docker-compose up -d
+   setup.bat
    ```
 
 The application will start on `http://localhost:8080`.
@@ -65,7 +65,7 @@ The application will start on `http://localhost:8080`.
 | Variable | Description | Required | Default |
 |----------|-------------|----------|---------|
 | `NVIDIA_API_KEY` | Your NVIDIA API key | Yes | - |
-| `NVIDIA_API_URL` | NVIDIA API endpoint | No | `https://integrate.api.nvidia.com/v1` |
+| `NVIDIA_API_URL` | NVIDIA API endpoint | No | `https://integrate.api.nvidia.com/v1/chat/completions` |
 | `NVIDIA_MODEL` | AI model to use | No | `meta/llama-3.1-8b-instruct` |
 | `SERVER_PORT` | Application port | No | `8080` |
 | `LOG_LEVEL` | Logging level | No | `INFO` |
@@ -75,13 +75,13 @@ The application will start on `http://localhost:8080`.
 ### Health Check
 
 ```bash
-curl http://localhost:8080/health
+curl http://localhost:8080/api/v1/health
 ```
 
 ### Code Generation
 
 ```bash
-curl -X POST http://localhost:8080/api/assist \
+curl -X POST http://localhost:8080/api/v1/assist \
   -H "Content-Type: application/json" \
   -d '{
     "agentType": "CODE_GENERATION",
@@ -92,7 +92,7 @@ curl -X POST http://localhost:8080/api/assist \
 ### Code Review
 
 ```bash
-curl -X POST http://localhost:8080/api/assist \
+curl -X POST http://localhost:8080/api/v1/assist \
   -H "Content-Type: application/json" \
   -d '{
     "agentType": "CODE_REVIEW",
@@ -103,7 +103,7 @@ curl -X POST http://localhost:8080/api/assist \
 ### Code Explanation
 
 ```bash
-curl -X POST http://localhost:8080/api/assist \
+curl -X POST http://localhost:8080/api/v1/assist \
   -H "Content-Type: application/json" \
   -d '{
     "agentType": "CODE_EXPLANATION",
@@ -121,8 +121,6 @@ docker-compose up -d
 
 # Stop
 stop.bat
-# or
-docker-compose down
 
 # View logs
 docker-compose logs -f
@@ -164,13 +162,13 @@ src/
 
 ```bash
 # In Docker
-docker-compose exec app mvn test
+docker-compose exec assistant mvn test
 
 # Specific test
-docker-compose exec app mvn test -Dtest=NvidiaApiClientTest
+docker-compose exec assistant mvn test -Dtest=NvidiaApiClientTest
 
 # With coverage
-docker-compose exec app mvn clean test jacoco:report
+docker-compose exec assistant mvn clean test jacoco:report
 ```
 
 ### Code Style

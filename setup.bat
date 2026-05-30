@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 echo.
 echo =============================================
-echo   Multi-Agent Coding Assistant - Docker Setup
+echo   General Coding Assistant - Docker Setup
 echo =============================================
 echo.
 

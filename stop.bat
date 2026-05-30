@@ -1,11 +1,11 @@
 @echo off
 REM ============================================
-REM Multi-Agent Coding Assistant - Stop Script
+REM General Coding Assistant - Stop Script
 REM ============================================
 
 echo.
 echo ==========================================
-echo   Stopping Multi-Agent Assistant
+echo   Stopping Coding Assistant
 echo ==========================================
 echo.
 
