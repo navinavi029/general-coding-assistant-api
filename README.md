@@ -1,6 +1,6 @@
 # AI Coding Assistant API
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+[![CI](https://github.com/navinavi029/AI-Coding-Assistant-API/actions/workflows/ci.yml/badge.svg)](https://github.com/navinavi029/AI-Coding-Assistant-API/actions/workflows/ci.yml)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Java](https://img.shields.io/badge/Java-17-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.1-green)
@@ -74,9 +74,9 @@ The application will start on `http://localhost:8080`.
 |----------|-------------|----------|---------|
 | `NVIDIA_API_KEY` | Your NVIDIA API key | Yes | - |
 | `NVIDIA_API_URL` | NVIDIA API endpoint | No | `https://integrate.api.nvidia.com/v1/chat/completions` |
-| `NVIDIA_MODEL` | AI model to use | No | `meta/llama-3.1-8b-instruct` |
+| `NVIDIA_MODEL` | AI model to use | No | `google/gemma-4-31b-it` |
 | `SERVER_PORT` | Application port | No | `8080` |
-| `LOG_LEVEL` | Logging level | No | `INFO` |
+| `REQUEST_TIMEOUT_SECONDS` | Request timeout in seconds | No | `60` |
 
 ## Usage
 
